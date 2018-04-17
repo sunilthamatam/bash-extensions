@@ -8,3 +8,7 @@ Prompt similar to below would appear in shell. This scirpt also changes current 
 Directory without git :: `[johndoe::Desktop #(no-git)]$ `
 
 Directory with git enabled :: `[johndoe::my-work #(master)]$ `
+
+## 2. git
+Auto completes branch names matching into git commands for checkout.
+Auto complete most popular git commands :: pull, reabse, checkout, branch
