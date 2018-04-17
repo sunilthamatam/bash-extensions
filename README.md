@@ -15,7 +15,7 @@ Auto completes branch names matching into `git checkout` command.
 Auto complete most popular git commands :: pull, reabse, checkout, branch
 
 ### 2.1 OSX Installation
-Download git script from this repo.
+Download git(https://github.com/sunilthamatam/bash-extensions/blob/master/git) script from this repo.
 
 Install autocomplete for Bash using Brew (http://davidalger.com/development/bash-completion-on-os-x-with-brew/)
 
