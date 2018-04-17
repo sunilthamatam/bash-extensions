@@ -1,6 +1,6 @@
 # bash completion for git
 
-have git && _git() {
+_git() {
 
     local cur prev all_branches i
 
