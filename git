@@ -1,0 +1,49 @@
+# bash completion for git
+
+have git && _git() {
+
+    local cur prev all_branches i
+
+    COMPREPLY=()
+    _get_comp_words_by_ref cur prev
+
+    if [[ "$cur" == c* &&  \
+            "$prev" == "git" ]]; then
+        
+        COMPREPLY="checkout"
+        return 0
+    
+    elif [[ "$cur" == p* &&  \
+            "$prev" == "git" ]]; then
+        
+        COMPREPLY="pull"
+        return 0
+    
+    elif [[ "$cur" == b* &&  \
+            "$prev" == "git" ]]; then
+        
+        COMPREPLY="branch"
+        return 0
+
+    elif [[ "$cur" == r* &&  \
+            "$prev" == "git" ]]; then
+        
+        COMPREPLY="rebase origin/"
+        return 0
+    fi
+
+    if [[ -d .git ]]; then
+
+        if [[ "$prev" == "checkout" ]]; then
+            all_branches=( $(git branch | sed /\*/d | grep -i "$cur" ) )
+            
+            if [[ 1 == ${#all_branches[@]} ]]; then
+                COMPREPLY=${all_branches[0]}
+            else
+                COMPREPLY=( ${all_branches[*]} )
+            fi
+        fi
+    fi
+
+}
+complete -F _git git
