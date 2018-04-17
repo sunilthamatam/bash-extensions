@@ -11,4 +11,5 @@ Directory with git enabled :: `[johndoe::my-work #(master)]$ `
 
 ## 2. git
 Auto completes branch names matching into git commands for checkout.
+
 Auto complete most popular git commands :: pull, reabse, checkout, branch
